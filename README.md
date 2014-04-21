@@ -67,3 +67,7 @@ Dependencies
 |[Elasticsearch](https://github.com/elasticsearch/elasticsearch/tree/v1.1.1)|1.1.1|yes|
 |[Elasticsearch mapper attachments plugin](https://github.com/elasticsearch/elasticsearch-mapper-attachments/tree/v2.0.0.RC1)|2.0.0.RC1|no|
 |[Elasticsearch geocluster facet plugin](https://github.com/zenobase/geocluster-facet/tree/0.0.10)|0.0.10|no|
+
+License
+-------
+Celastica is open-sourced software licensed under the New BSD License. See the docs/LICENSE.txt file for more information.
