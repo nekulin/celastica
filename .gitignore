@@ -1,0 +1,6 @@
+.settings/
+.idea
+.cproject
+.project
+.temp
+ext/
