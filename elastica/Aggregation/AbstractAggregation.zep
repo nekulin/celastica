@@ -1,6 +1,6 @@
 namespace Elastica\Aggregation;
 
-abstract class AbstractAggregation extends Param
+abstract class AbstractAggregation extends \Elastica\Param
 {
     /**
      * The name of this aggregation
@@ -67,12 +67,12 @@ abstract class AbstractAggregation extends Param
     {
         var arr;
         let arr = parent::toArray();
-        if (array_key_exists('global_aggregation', arr)) {
+        if (array_key_exists("global_aggregation", arr)) {
             // compensate for class name GlobalAggregation
-            let arr['global'] = new \stdClass;
+            let arr["global"] = new \stdClass;
         }
-        if (sizeof(this->_aggs)) {
-            let arr['aggs'] = this->_aggs;
+        if (count(this->_aggs)) {
+            let arr["aggs"] = this->_aggs;
         }
         return arr;
     }
