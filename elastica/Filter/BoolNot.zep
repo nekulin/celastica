@@ -1,13 +1,10 @@
-<?php
-
 namespace Elastica\Filter;
 
 /**
  * Not Filter
  *
- * @category Xodoa
  * @package Elastica
- * @author Lee Parker, Nicolas Ruflin <spam@ruflin.com>
+ * @author Aris Kemper <aris.github@gmail.com>
  * @link http://www.elasticsearch.org/guide/reference/query-dsl/not-filter.html
  */
 class BoolNot extends AbstractFilter
@@ -17,7 +14,7 @@ class BoolNot extends AbstractFilter
      *
      * @param \Elastica\Filter\AbstractFilter filter Filter object
      */
-    public function __construct(AbstractFilter filter)
+    public function __construct(<\Elastica\Filter\AbstractFilter> filter) -> void
     {
         this->setFilter(filter);
     }
@@ -28,16 +25,16 @@ class BoolNot extends AbstractFilter
      * @param  \Elastica\Filter\AbstractFilter filter
      * @return \Elastica\Filter\BoolNot
      */
-    public function setFilter(AbstractFilter filter)
+    public function setFilter(<\Elastica\Filter\AbstractFilter> filter) -> <\Elastica\Filter\BoolNot>
     {
-        return this->setParam('filter', filter->toArray());
+        return this->setParam("filter", filter->toArray());
     }
 
     /**
      * @return string
      */
-    protected function _getBaseName()
+    protected function _getBaseName() -> string
     {
-        return 'not';
+        return "not";
     }
 }
