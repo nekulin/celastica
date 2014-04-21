@@ -1,45 +1,62 @@
 Celastica: elasticsearch Client
+=================
+
 Celastica is an open source elasticsearch client delivered as a C extension for the PHP language providing high performance and lower resource consumption.
 It is direct port of Ruflin PHP Client for elasticsearch Elastica.
 
 This readme provides an introduction to contributing to Elastica
 
 Get Started
+-----------
 
 Clone Elastica repo:
 
-git clone -b https://github.com/ariskemper/celastica.git
+    git clone -b https://github.com/ariskemper/celastica.git
+
 Clone zephir repo:
 
-git clone https://github.com/phalcon/zephir.git
-clone json-c repo:
+    git clone https://github.com/phalcon/zephir.git
 
-git clone https://github.com/json-c/json-c.git
+Clone json-c repo:
+
+    git clone https://github.com/json-c/json-c.git
+
 Install required packages:
 
-sudo apt-get install php5-dev gcc make re2c libpcre3-dev
+    sudo apt-get install php5-dev gcc make re2c libpcre3-dev
+
 Compile json-c:
 
-cd json-c
-sudo sh autogen.sh
-sudo ./configure
-sudo make
-sudo make install
-cd ..
+    cd json-c
+    sudo sh autogen.sh
+    sudo ./configure
+    sudo make
+    sudo make install
+    cd ..
+    
 Compile zephir:
 
-cd zephir
-sudo ./install
-cd ..
+    cd zephir
+    sudo ./install
+    cd ..
+
 Compile celastica:
 
-cd celastica
-../zephir/bin/zephir generate
-../zephir/bin/zephir compile
+    cd celastica
+    ../zephir/bin/zephir generate
+    ../zephir/bin/zephir compile
+
 Add extension to your php.ini
 
-extension=elastica.so
+    extension=elastica.so
+
 Finally restart/reload php
+
+External Links
+--------------
+
+* [Elasticsearch Documentation](http://www.elasticsearch.org/guide/)
+* [Zephir Documentation](http://zephir-lang.com/)
 
 Dependencies
 ------------
