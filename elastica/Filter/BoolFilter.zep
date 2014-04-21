@@ -4,7 +4,7 @@ namespace Elastica\Filter;
  * Bool Filter
  *
  * @package Elastica
- * @author Aris Kemper <aris.kemper@gmail.com>
+ * @author Aris Kemper <aris.github@gmail.com>
  * @link http://www.elasticsearch.org/guide/reference/query-dsl/bool-query.html
  */
 class BoolFilter extends AbstractFilter
@@ -41,9 +41,9 @@ class BoolFilter extends AbstractFilter
      * @param  array|\Elastica\Filter\AbstractFilter args Filter data
      * @return \Elastica\Filter\Bool           Current object
      */
-    public function addShould(var args) -> <\Elastica\Filter\Bool>
+    public function addShould(var args) -> <\Elastica\Filter\BoolFilter>
     {
-        return this->_addFilter('should', args);
+        return this->_addFilter("should", args);
     }
 
     /**
@@ -52,9 +52,9 @@ class BoolFilter extends AbstractFilter
      * @param  array|\Elastica\Filter\AbstractFilter args Filter data
      * @return \Elastica\Filter\Bool           Current object
      */
-    public function addMust(array|<\Elastica\Filter\AbstractFilter> args) -> <\Elastica\Filter\Bool>
+    public function addMust(var args) -> <\Elastica\Filter\BoolFilter>
     {
-        return this->_addFilter('must', args);
+        return this->_addFilter("must", args);
     }
 
     /**
@@ -63,9 +63,9 @@ class BoolFilter extends AbstractFilter
      * @param  array|\Elastica\Filter\AbstractFilter args Filter data
      * @return \Elastica\Filter\Bool           Current object
      */
-    public function addMustNot(array|<\Elastica\Filter\AbstractFilter> args) -> <\Elastica\Filter\Bool>
+    public function addMustNot(var args) -> <\Elastica\Filter\BoolFilter>
     {
-        return this->_addFilter('mustNot', args);
+        return this->_addFilter("mustNot", args);
     }
 
     /**
@@ -76,20 +76,21 @@ class BoolFilter extends AbstractFilter
      * @throws \Elastica\Exception\InvalidException
      * @return \Elastica\Filter\Bool           Current object
      */
-    protected function _addFilter(array type, array|<\Elastica\Filter\AbstractFilter> args) -> <\Elastica\Filter\Bool>
+    protected function _addFilter(string type, var args) -> <\Elastica\Filter\BoolFilter>
     {
         var varName;
 
-        if (args instanceof \Elastica\Filter\AbstractFilter) {
-            args = args->toArray();
+        if args instanceof \Elastica\Filter\AbstractFilter {
+            let args = args->toArray();
         }
 
-        if (!is_array(args)) {
-            throw new \Elastica\Exception\InvalidException('Invalid parameter. Has to be array or instance of Elastica\Filter');
+        if !is_array(args) {
+            throw new \Elastica\Exception\InvalidException("Invalid parameter. Has to be array or instance of Elastica\Filter");
         }
 
-        let varName = '_' . type;
-        let this->{varName}[] = args;
+        let varName = "_" . type;
+        //todo
+        //let this->{varName}[] = args;
 
         return this;
     }
@@ -105,16 +106,16 @@ class BoolFilter extends AbstractFilter
         var args;
         let args = [];
 
-        if (!empty(this->_must)) {
-            args['bool']['must'] = this->_must;
+        if !empty(this->_must) {
+            let args["bool"]["must"] = this->_must;
         }
 
-        if (!empty(this->_should)) {
-            args['bool']['should'] = this->_should;
+        if !empty(this->_should) {
+            let args["bool"]["should"] = this->_should;
         }
 
-        if (!empty(this->_mustNot)) {
-            args['bool']['must_not'] = this->_mustNot;
+        if !empty(this->_mustNot) {
+            let args["bool"]["must_not"] = this->_mustNot;
         }
 
         return args;
@@ -126,10 +127,9 @@ class BoolFilter extends AbstractFilter
      * @param  float                      boost Boost
      * @return \Elastica\Filter\Bool Current object
      */
-    public function setBoost(boost) -> <\Elastica\Filter\Bool>
+    public function setBoost(var boost) -> <\Elastica\Filter\BoolFilter>
     {
         let this->_boost = boost;
-
         return this;
     }
 
