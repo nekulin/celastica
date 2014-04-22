@@ -4,7 +4,7 @@ namespace Elastica\Transport;
  * Elastica Null Transport object
  *
  * @package Elastica
- * @author Aris Kemper <aris.kemper@gmail.com>
+ * @author Aris Kemper <aris.github@gmail.com>
  */
 class NullTransport extends AbstractTransport
 {
@@ -32,7 +32,7 @@ class NullTransport extends AbstractTransport
                     "hits": []
                 ],
                 "params": params
-                );
+        ];
 
          return new \Elastica\Response(json_encode(response));
     }
