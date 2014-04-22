@@ -4,10 +4,10 @@ namespace Elastica\Query;
  * Custom score query
  *
  * @package Elastica
- * @author Aris Kemper <aris.kemper@gmail.com>
+ * @author Aris Kemper <aris.github@gmail.com>
  * @link http://www.elasticsearch.org/guide/reference/query-dsl/custom-score-query.html
  */
-class CustomScore extends AbstractQuery
+class FunctionScore extends AbstractQuery
 {
     /**
      * Constructor
@@ -27,9 +27,9 @@ class CustomScore extends AbstractQuery
      * Sets query object
      *
      * @param  string|\Elastica\Query|\Elastica\Query\AbstractQuery query
-     * @return \Elastica\Query\CustomScore
+     * @return \Elastica\Query\FunctionScore
      */
-    public function setQuery(var query) -> <\Elastica\Query\CustomScore>
+    public function setQuery(var query) -> <\Elastica\Query\FunctionScore>
     {
         var data;
         let query = \Elastica\Query::create(query);
@@ -42,9 +42,9 @@ class CustomScore extends AbstractQuery
      * Set script
      *
      * @param  string|\Elastica\Script          script
-     * @return \Elastica\Query\CustomScore
+     * @return \Elastica\Query\FunctionScore
      */
-    public function setScript(var script) -> <\Elastica\Query\CustomScore>
+    public function setScript(var script) -> <\Elastica\Query\FunctionScore>
     {
         var param, value;
         let script = \Elastica\Script::create(script);
@@ -59,9 +59,9 @@ class CustomScore extends AbstractQuery
      * Add params
      *
      * @param  array                           params
-     * @return \Elastica\Query\CustomScore
+     * @return \Elastica\Query\FunctionScore
      */
-    public function addParams(array params) -> <\Elastica\Query\CustomScore>
+    public function addParams(array params) -> <\Elastica\Query\FunctionScore>
     {
         this->setParam("params", params);
 
