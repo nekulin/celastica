@@ -5,7 +5,7 @@ namespace Elastica\Rescore;
 * @author Aris Kemper <aris.github@gmail.com>
 * @link http://www.elasticsearch.org/guide/reference/api/search/rescore/
 */
-abstract class AbstractRescore extends Param
+abstract class AbstractRescore extends \Elastica\Param
 {
     /**
     * Overriden to return rescore as name
