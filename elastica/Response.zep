@@ -152,7 +152,7 @@ class Response
                 let tempResponse = json_decode(response, true);
                 // Check if decoding went as expected. If error is returned, json_decode makes empty string of string
                 if (json_last_error() == JSON_ERROR_NONE) {
-                    response = tempResponse;
+                    let response = tempResponse;
                 }
             }
 
