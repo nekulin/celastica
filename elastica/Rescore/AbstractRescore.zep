@@ -14,7 +14,7 @@ abstract class AbstractRescore extends Param
     */
     protected function _getBaseName() -> string
     {
-        return 'rescore';
+        return "rescore";
     }
 
     /**
@@ -25,6 +25,6 @@ abstract class AbstractRescore extends Param
     */
     public function setWindowSize(size) -> <\Elastica\Rescore>
     {
-        return $this->setParam('window_size', size);
+        return $this->setParam("window_size", size);
     }
 }
