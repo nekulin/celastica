@@ -17,7 +17,7 @@ class Query extends AbstractRescore
      */
     public function __construct(var query = null)
     {
-        this->setParam('query', []);
+        this->setParam("query", []);
         this->setRescoreQuery(query);
     }
 
@@ -53,10 +53,10 @@ class Query extends AbstractRescore
         let query = \Elastica\Query::create(rescoreQuery);
         let data = query->toArray();
 
-        let query = this->getParam('query');
-        let query['rescore_query'] = data['query'];
+        let query = this->getParam("query");
+        let query["rescore_query"] = data["query"];
 
-        return this->setParam('query', query);
+        return this->setParam("query", query);
     }
 
     /**
@@ -69,10 +69,10 @@ class Query extends AbstractRescore
     {
         var query;
 
-        let query = this->getParam('query');
-        query['query_weight'] = weight;
+        let query = this->getParam("query");
+        let query["query_weight"] = weight;
 
-        return this->setParam('query', query);
+        return this->setParam("query", query);
     }
 
     /**
@@ -85,9 +85,9 @@ class Query extends AbstractRescore
     {
         var query;
 
-        let query = this->getParam('query');
-        query['rescore_query_weight'] = weight;
+        let query = this->getParam("query");
+        let query["rescore_query_weight"] = weight;
 
-        return this->setParam('query', query);
+        return this->setParam("query", query);
     }
 }
