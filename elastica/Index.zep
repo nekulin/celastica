@@ -81,7 +81,7 @@ class Index implements SearchableInterface
      */
     public function getMapping() -> array
     {
-        var path, response, data;
+        var path, response, data, mapping;
 
         let path = "_mapping";
 
@@ -91,8 +91,8 @@ class Index implements SearchableInterface
         // Get first entry as if index is an Alias, the name of the mapping is the real name and not alias name
         let mapping = array_shift(data);
 
-        if isset mapping['mappings'] {
-            return mapping['mappings'];
+        if isset mapping["mappings"] {
+            return mapping["mappings"];
         }
 
         return [];
