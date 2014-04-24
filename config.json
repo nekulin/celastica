@@ -35,8 +35,8 @@
     },
     "namespace": "elastica",
     "name": "elastica",
-    "description": "",
-    "author": "",
+    "description": "Elastica extension for ElasticSearch",
+    "author": "Celastica team",
     "version": "0.0.1",
     "verbose": false
 }
