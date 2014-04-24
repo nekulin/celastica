@@ -48,7 +48,7 @@ class Query extends AbstractRescore
      */
     public function setRescoreQuery(var rescoreQuery) -> <\Elastica\Query\Rescore>
     {
-        var data;
+        var data, query;
 
         let query = \Elastica\Query::create(rescoreQuery);
         let data = query->toArray();
